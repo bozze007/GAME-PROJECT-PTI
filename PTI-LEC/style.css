@@ -1,0 +1,56 @@
+/* Set up some basic styles for the body and heading */
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Style the Tamagotchi container */
+  #tamagotchi {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  /* Style the Tamagotchi image */
+  #tamagotchi img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the stats container */
+  #stats {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Style the buttons container */
+  #buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Style the button elements */
+  button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  

@@ -21,7 +21,38 @@
         </div>
     
         <div id="game-screen">
-          <!-- Game content here -->
+          <div id="choose-character">
+        <div class="left">
+          <h2>Pilih Karakter:</h2>
+          <div class="character-option">
+            <img src="burung-removebg-preview.png" alt="Burung" data-index="0">
+            
+          </div>
+          <div class="character-option">
+            <img src="monyet-removebg-preview.png" alt="Monyet" data-index="1">
+            
+          </div>
+          <div class="character-option">
+            <img src="panda-removebg-preview.png" alt="Panda" data-index="2">
+            
+          </div>
+        </div>
+        <div class="right">
+          <img src="burung-removebg-preview.png" alt="Gambar Burung" id="preview-image" data-index="0">
+          <p id="preview-text">
+          <div class="arrow" id="left-arrow" aria-label="Karakter Sebelumnya"><span>&lt;</span></div>
+          <div class="arrow" id="right-arrow" aria-label="Karakter Selanjutnya"><span>&gt;</span></div>
+        </div>
+    </div>
+    <div id="type-name">
+        <div class="name">
+            <input class="your-name" type="text" placeholder="Enter your name here...">
+            <div class="button">
+                <button class="choose-button" type="submit">Choose</button>
+            </div>
+        </div>
+
+    </div>
         </div>
     
         <script src="script.js"></script>

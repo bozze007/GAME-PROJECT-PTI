@@ -13,6 +13,18 @@ window.addEventListener("load", function() {
     }, 500);
   }, 3000);
 });
+
+//efek video loading screen
+var video1 = document.getElementById("loading-video-1");
+var video2 = document.getElementById("loading-video-2");
+
+video1.addEventListener("ended", function() {
+  video1.style.display = "none";
+  video2.style.display = "block";
+  video2.play();
+});
+
+//tampilan pilih char
 var characters = ['burung-removebg-preview.png', 'monyet-removebg-preview.png', 'panda-removebg-preview.png'];
 var currentCharacter = 0;
 

@@ -51,7 +51,98 @@
   display: none;
 }
 
+#choose-character {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.character-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.character-option:hover {
+  transform: scale(1.1);
+}
+
+.character-option img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  background-color: #3e8e41;
+}
+
+#left-arrow {
+  left: -30px;
+}
+
+#right-arrow {
+  right: -30px;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.your-name{
+  border: 2px solid black;
+}
+.choose-button{
+  border: 2px solid black;
+  margin-top: 5px;
+  background-color: rgb(100, 88, 88);
+  position: relative;
+}
+
+.choose-button:hover{
+  background: lightgray;
+}
 
 
 

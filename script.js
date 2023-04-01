@@ -68,3 +68,9 @@ function updatePreview() {
       }
       updatePreview();
       });
+
+video1.addEventListener("ended", function() {
+  video1.style.display = "none";
+  video2.style.display = "block";
+  video2.play();
+});

@@ -31,7 +31,15 @@
   align-items: center;
 }
 
-#loading-video {
+#loading-video-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#loading-video-2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -92,9 +100,10 @@
   border-radius: 50%;
 }
 
-.inputNama{
+#inputNama{
   display: flex;
   justify-content: center;
+  padding-top: 75px;
 }
 
 .choose-button{
@@ -149,4 +158,23 @@
 
 .your-name{
   border: 2px solid black;
+  border-radius: 5px;
+  height: 50px;
+  width: 300px;
+  justify-content: center;
+}
+
+.button {
+  justify-content: center;
+  display: flex;
+  padding: 25px;
+  height: 100px;
+  width: auto;
+  border-radius: 5px;
+}
+
+#body {
+  background-image:url("https://img.freepik.com/premium-vector/fantasy-wild-jungle-forest-with-plants_33070-5426.jpg?w=1380");
+  background-repeat: repeat-x;
+  
 }

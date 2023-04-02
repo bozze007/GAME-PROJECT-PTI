@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
   setTimeout(function() {
     loadingScreen1.style.display = "none";
     video1.play();
-  }, 3000);
+  }, 2000);
   
 });
 
@@ -41,48 +41,59 @@ window.addEventListener("load", function() {
 
 
 //tampilan pilih char
-var characters = ['burung-removebg-preview.png', 'monyet-removebg-preview.png', 'panda-removebg-preview.png'];
+var characters = ['burung.png', 'monyet.png', 'panda.png'];
 var currentCharacter = 0;
 
 function updatePreview() {
-    var previewImage = document.getElementById('preview-image');
-    var previewText = document.getElementById('preview-text');
-    var currentIndex = parseInt(previewImage.dataset.index);
-      if (currentIndex === currentCharacter) {
-        return;
-        }
-          previewImage.classList.remove('fade-in');
-          previewImage.classList.add('fade-out');
-          setTimeout(function() {
-          previewImage.src = characters[currentCharacter];
-          previewImage.dataset.index = currentCharacter;
-          previewImage.classList.remove('fade-out');
-          previewImage.classList.add('fade-in');
-          switch (currentCharacter) {
-          case 0:
-          break;
-          case 1:
-          break;
-          case 2:
-          break;
-          }
-        }, 200);
-      }  
-      
-      document.getElementById('left-arrow').addEventListener('click', function() {
-      currentCharacter--;
-      if (currentCharacter < 0) {
-      currentCharacter = characters.length - 1;
-      }
-      updatePreview();
-      });
-      
-      document.getElementById('right-arrow').addEventListener('click', function() {
-      currentCharacter++;
-      if (currentCharacter > characters.length - 1) {
-      currentCharacter = 0;
-      }
-      updatePreview();
+  var previewImage = document.getElementById('preview-image');
+  var previewText = document.getElementById('preview-text');
+  var currentIndex = parseInt(previewImage.dataset.index);
+  
+  if (currentIndex === currentCharacter) {
+    return;
+  }
+  
+  previewImage.classList.remove('fade-in');
+  previewImage.classList.add('fade-out');
+  
+  setTimeout(function() {
+    previewImage.src = characters[currentCharacter];
+    previewImage.dataset.index = currentCharacter;
+    previewImage.classList.remove('fade-out');
+    previewImage.classList.add('fade-in');
+    
+    switch (currentCharacter) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+        break;
+    }
+  }, 200);
+}
 
-      });
+// Tambahkan event listener untuk setiap gambar pada character option
+document.querySelectorAll('.character-option img').forEach(function(img) {
+  img.addEventListener('click', function() {
+    currentCharacter = parseInt(this.dataset.index);
+    updatePreview();
+  });
+});
+
+document.getElementById('left-arrow').addEventListener('click', function() {
+  currentCharacter--;
+  if (currentCharacter < 0) {
+    currentCharacter = characters.length - 1;
+  }
+  updatePreview();
+});
+
+document.getElementById('right-arrow').addEventListener('click', function() {
+  currentCharacter++;
+  if (currentCharacter > characters.length - 1) {
+    currentCharacter = 0;
+  }
+  updatePreview();
+});
 

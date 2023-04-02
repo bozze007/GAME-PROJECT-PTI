@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>UMN Gotcha</title>
-        <link rel="stylesheet" href="style.css">
-      </head>
-      <body>
-        <div id="head">
-          <div class="logo">
-            <img src="Logo UMNGotcha.png" alt="Logo Left">
-          </div>
-          <div class="logo">
-            <img src="Logo Kel.png" alt="Logo Right">
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMN Gotcha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="head">
+    <div class="logo">
+      <img src="Logo UMNGotcha.png" alt="Logo Left">
+    </div>
+    <div class="logo">
+      <img src="Logo Kel.png" alt="Logo Right">
+    </div>
+  </div>
 
-        <div id="loading-screen">
-          <div id="loading-message">
-            <h1></h1>
-          </div>
-          <div id="loading-screen">
-            <video id="loading-video-1" autoplay muted loop>
-                <source src="logo gotcha.mp4" type="video/mp4" preload="auto">
-            </video>
-            <video id="loading-video-2" autoplay muted loop style="display:none;">
-                <source src="logo kel besar.mp4" type="video/mp4" preload="auto">
-            </video>
+  <div id="loading-screen">
+    <video id="loading-video-1" autoplay muted>
+      <source src="logo gotcha.mp4" type="video/mp4" preload="auto">
+    </video>
+  </div>
+  <div id="loading-screen-2">
+    <video id="loading-video-2" autoplay muted>
+      <source src="logo kel besar.mp4" type="video/mp4" preload="auto">
+    </video>
+  </div>
+
+  <div id="game-screen" style="display: none;">
+    <div id="choose-character">
+      <div class="left">
+        <h2>Pilih Karakter:</h2>
+        <div class="character-option">
+          <img src="burung-removebg-preview.png" alt="Burung" data-index="0">
         </div>
-    
-        <div id="game-screen">
-          <div id="choose-character">
-            <div class="left">
-              <h2>Pilih Karakter:</h2>
-              <div class="character-option">
-                <img src="burung-removebg-preview.png" alt="Burung" data-index="0">
-                
-              </div>
-              <div class="character-option">
-                <img src="monyet-removebg-preview.png" alt="Monyet" data-index="1">
-                
-              </div>
-              <div class="character-option">
-                <img src="panda-removebg-preview.png" alt="Panda" data-index="2">
-                
-              </div>
-            </div>
-            <div class="right">
-              <img src="burung-removebg-preview.png" alt="Gambar Burung" id="preview-image" data-index="0">
-              <p id="preview-text">
-              <div class="arrow" id="left-arrow" aria-label="Karakter Sebelumnya"><span>&lt;</span></div>
-              <div class="arrow" id="right-arrow" aria-label="Karakter Selanjutnya"><span>&gt;</span></div>
-            </div>
+        <div class="character-option">
+          <img src="monyet-removebg-preview.png" alt="Monyet" data-index="1">
         </div>
-        <div id="type-name">
-            <div class="name">
-                <input class="your-name" type="text" placeholder="Enter your name here...">
-                <div class="button">
-                    <button class="choose-button" type="submit">Choose</button>
-                </div>
-            </div>
+        <div class="character-option">
+          <img src="panda-removebg-preview.png" alt="Panda" data-index="2">
         </div>
-    
-        <script src="script.js"></script>
-      </body>
-    </html>
+      </div>
+      <div class="right">
+        <img src="burung-removebg-preview.png" alt="Gambar Burung" id="preview-image" data-index="0">
+        <p id="preview-text"></p>
+        <div class="arrow" id="left-arrow" aria-label="Karakter Sebelumnya"><span>&lt;</span></div>
+        <div class="arrow" id="right-arrow" aria-label="Karakter Selanjutnya"><span>&gt;</span></div>
+      </div>
+    </div>
+    <div id="inputNama">
+      <div class="name">
+        <input class="your-name" type="text" placeholder="Enter your name here...">
+      </div>
+      <div class="button">
+        <button class="choose-button" type="submit">Submit Name</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

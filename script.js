@@ -83,4 +83,6 @@ function updatePreview() {
       currentCharacter = 0;
       }
       updatePreview();
+
       });
+

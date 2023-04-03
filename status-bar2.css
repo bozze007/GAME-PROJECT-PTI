@@ -1,0 +1,52 @@
+.status-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 100%;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    margin:auto;
+  }
+  
+  
+  .status-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .status-item span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .status-bar-inner {
+    width: 50%;
+    height: 10px;
+    border-radius: 5px;
+  }
+  
+  .status-bar-inner.makan {
+    background-color: #8bc34a;
+  }
+  
+  .status-bar-inner.tidur {
+    background-color: #2196f3;
+  }
+  
+  .status-bar-inner.main {
+    background-color: #ff9800;
+  }
+  
+  .status-bar-inner.kesehatan {
+    background-color: #f44336;
+  }
+  

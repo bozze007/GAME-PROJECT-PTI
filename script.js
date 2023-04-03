@@ -141,71 +141,119 @@ let hour = now.getHours();
 
 if (hour >= 5 && hour < 12) {
   background.style.backgroundImage = 'url("pagi.png")';
-} else if (hour >= 12 && hour < 17) {
+} else if (hour >= 12 && hour < 18) {
   background.style.backgroundImage = 'url("siang.png")';
 } else {
   background.style.backgroundImage = 'url("malam.png")';
 }
 
-//screen gameplay
 
 //gameplay
 let health = 100;
 let hunger = 0;
 let happiness = 50;
+let sleep = 100;
 
 const updateStatusBar = () => {
   const healthElem = document.querySelector('#status-bar span:nth-of-type(1)');
   const hungerElem = document.querySelector('#status-bar span:nth-of-type(2)');
   const happinessElem = document.querySelector('#status-bar span:nth-of-type(3)');
+  const sleepElem = document.querySelector('#status-bar span:nth-of-type(4)');
 
-  healthElem.innerText = `Health: ${health}`;
-  hungerElem.innerText = `Hunger: ${hunger}`;
-  happinessElem.innerText = `Happiness: ${happiness}`;
+  healthElem.innerText = `Health: ${health < 0 ? 0 : health}`;
+  hungerElem.innerText = `Hunger: ${hunger < 0 ? 0 : hunger}`;
+  happinessElem.innerText = `Happiness: ${happiness < 0 ? 0 : happiness}`;
+  sleepElem.innerText = `Sleep: ${sleep < 0 ? 0 : sleep}`;
 };
 
 const startTamagotchi = () => {
-	const gameElem = document.querySelector('#game');
-	gameElem.innerHTML = `
-		<div>
-			<img src="${characters[currentCharacter]}" alt="Tamagotchi" width="100">
-			<p>Click the Tamagotchi to feed it</p>
-		</div>`;
+  const gameElem = document.querySelector('#game');
+  gameElem.innerHTML = `
+    <div>
+      <img src="${characters[currentCharacter]}" alt="Tamagotchi" width="100">
+      <p>Click the Tamagotchi to feed it</p>
+    </div>
+  `;
 
-	const tamagotchiImg = gameElem.querySelector('img');
+  const tamagotchiImg = gameElem.querySelector('img');
   tamagotchiImg.style.width = '400px';
-	tamagotchiImg.addEventListener('click', () => {
-		if (hunger < 10) {
-			hunger = hunger
-        updateStatusBar();
-		} else {
-			alert('Your Tamagotchi is full!');
-		}
-	});
+  tamagotchiImg.addEventListener('click', () => {
+    if (hunger < 10) {
+      hunger -= 10;
+      happiness += 5;
+      updateStatusBar();
+    } else {
+      alert('Your Tamagotchi is full!');
+    }
+  });
 
-	const gameLoop = setInterval(() => {
-		hunger += 1;
-		happiness -= 1;
+  const sleepButton = document.querySelector('#tidur');
+  sleepButton.addEventListener('click', () => {
+    if (sleep <= 75) {
+      sleep += 25;
+    } else if (sleep < 100) {
+      sleep = 100;
+    } else {
+      alert('Your Tamagotchi is already fully rested!');
+    }
+    updateStatusBar();
+  })
 
-		if (hunger >= 100) {
-			clearInterval(gameLoop);
-			alert('Your Tamagotchi has died of hunger!');
-		}
+  const obatButton = document.querySelector('#obat');
+  obatButton.addEventListener('click', () => {
+    if (health <= 100) {
+      health += 5;
+      if (health > 100) {
+        health = 100;
+      }
+      happiness -= 5;
+      updateStatusBar();
+    } else {
+      alert('Your Tamagotchi is already healthy!');
+    }
+  });
 
-		if (happiness <= 0) {
-			clearInterval(gameLoop);
-			alert('Your Tamagotchi has died of sadness!');
-		}
-
-		updateStatusBar();
-	}, 3000);
+  const gameLoop = setInterval(() => {
+    hunger += 1;
+    happiness -= 1;
+  
+    if (hunger >= 100) {
+      clearInterval(gameLoop);
+      alert('Your Tamagotchi has died of hunger!');
+    }
+  
+    if (happiness <= 0) {
+      clearInterval(gameLoop);
+      alert('Your Tamagotchi has died of sadness!');
+    }
+  
+    health -= 1;
+  
+    // decrease sleep idle
+    if (hunger < 90 && happiness > 10) {
+      sleep -= 2;
+    }
+  
+    // decrease sleep playing
+    if (game) {
+      sleep -= 5;
+    }
+  
+    if (sleep <= 0) {
+      clearInterval(gameLoop);
+      alert('Your Tamagotchi has died of exhaustion!');
+    }
+  
+    console.log(`health: ${health}, hunger: ${hunger}, happiness: ${happiness}, sleep: ${sleep}`);
+    updateStatusBar();
+  }, 5000);
 };
-
+startTamagotchi();
 
 const startSnake = () => {
 	const gameElem = document.querySelector('#game');
 	gameElem.innerHTML = `
-		<canvas id="snake-canvas" width="400" height="400"></canvas>
+		<canvas id="snake-canvas" width="451" height="451"></canvas>
 	`;
 
 	const canvas = gameElem.querySelector('#snake-canvas');

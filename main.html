@@ -35,17 +35,17 @@
       <div class="left">
         <h2>Pilih Karakter:</h2>
         <div class="character-option">
-          <img src="burung.png" alt="Burung" data-index="0">
+          <img src="fburung.png" alt="Burung" data-index="0">
         </div>
         <div class="character-option">
-          <img src="monyet.png" alt="Monyet" data-index="1">
+          <img src="fmonyet.png" alt="Monyet" data-index="1">
         </div>
         <div class="character-option">
-          <img src="panda.png" alt="Panda" data-index="2">
+          <img src="fpanda.png" alt="Panda" data-index="2">
         </div>
       </div>
       <div class="right">
-        <img src="burung.png" alt="Gambar Burung" id="preview-image" data-index="0">
+        <img src="fburung.png" alt="Gambar Burung" id="preview-image" data-index="0">
         <p id="preview-text"></p>
         <div class="arrow" id="left-arrow" aria-label="Karakter Sebelumnya"><span>&lt;</span></div>
         <div class="arrow" id="right-arrow" aria-label="Karakter Selanjutnya"><span>&gt;</span></div>
@@ -58,8 +58,26 @@
       </div>
     </div>
       <div class="button">
-        <button class="choose-button" type="submit">Submit Name</button>
+        <button class="choose-button" type="submit" id="submit-name">Play</button>
       </div>
+  </div>
+
+  <div id="gameplay-screen" style="display: none;">
+    <div id="status-bar">
+      <span>Health: 100</span>
+      <span>Hunger: 0</span>
+      <span>Happiness: 50</span>
+    </div>
+    <div id="sapa"></div>
+    <div id="jam"></div>
+    <div id="game-container">
+      <div id="game"></div>
+    </div>
+    <div id="play-options">
+      <button id="main">Main</button>
+      <button id="makan">Makan</button>
+      <button id="tidur">Tidur</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

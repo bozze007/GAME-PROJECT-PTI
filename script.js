@@ -173,6 +173,7 @@ const startTamagotchi = () => {
 		</div>`;
 
 	const tamagotchiImg = gameElem.querySelector('img');
+  tamagotchiImg.style.width = '400px';
 	tamagotchiImg.addEventListener('click', () => {
 		if (hunger < 10) {
 			hunger = hunger

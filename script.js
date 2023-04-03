@@ -168,6 +168,7 @@ const updateStatusBar = () => {
 
 const startTamagotchi = () => {
   const gameElem = document.querySelector('#game');
+  // currentCharacter = parseInt(document.querySelector('.character-option img.selected').dataset.index);
   gameElem.innerHTML = `
     <div>
       <img src="${characters[currentCharacter]}" alt="Tamagotchi" width="100">
